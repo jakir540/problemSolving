@@ -46,3 +46,56 @@ const result2 = getBookTitles(books);
 console.log(result2);
 
 // 3. Write three functions: one to square a number, one to double a number, and one to add 5 to a number. Compose these functions to create a new function that squares a number, doubles the result, and then adds 5
+function Square(num) {
+  return num * num;
+}
+function Double(num) {
+  return num * 2;
+}
+function AddFive(num) {
+  return num + 5;
+}
+function ComposeFun(num) {
+  const square = Square(num);
+  const double = Double(square);
+  const addFive = AddFive(double);
+  return addFive;
+}
+
+const result3 = ComposeFun(10);
+console.log(result3);
+
+// 4. Write a function that determines whether a given year is a leap year.
+
+// Example: Happy New Year
+
+function LeapYearChecker(year) {
+  if (year % 400 === 0) {
+    return true;
+  } else if (year % 100 === 0) {
+    return false;
+  } else if (year % 4 === 0) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+const year = 2024;
+
+if (LeapYearChecker(year)) {
+  console.log("Happy New Year");
+} else {
+  console.log(`${year} is not a leap year.`);
+}
+
+// 5. Create an array of numbers with some duplicate values. Write a function to filter out the duplicate values and return a new array with only unique numbers. Print the result.
+
+const numbers = [3, 7, 2, 7, 3, 10, 15, 2, 6, 10, 3];
+
+function UniqueNumberChecker(numbers) {
+  return [...new Set(numbers)];
+}
+
+const result5 = UniqueNumberChecker(numbers);
+console.log(result5);
